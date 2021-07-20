@@ -4,8 +4,8 @@
    <div class="card-content">
         <h5><%= tweet.title %></h5>
         <div class="btn-group">
-            <%= button_to "Likes #{tweet.likesCount}", tweet, class: "btn btn-primary btn-sm m-1" %>
-            <%= button_to "Retweets #{tweet.retweetsCount}", tweet, class: "btn btn-success btn-sm m-1" %>
+            <%= button_to "Like #{tweet.likesCount}", tweet_like_path(tweet), method: :post, class: "btn btn-primary btn-sm m-1" %>
+            <%= button_to "Retweet #{tweet.retweetsCount}", tweet_retweet_path(tweet), method: :post, class: "btn btn-success btn-sm m-1" %>
             <%= button_to "Editar", edit_tweet_path(tweet), method: :get, :class => "btn btn-danger btn-sm m-1" %>
             <%= button_to "Eliminar", tweet, method: :delete, :class => "btn btn-danger btn-sm m-1" %>
         </div>
