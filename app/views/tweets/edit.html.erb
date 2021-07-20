@@ -1,6 +1,13 @@
 <h1>Editing Tweet</h1>
 
-<%= render 'form', tweet: @tweet %>
+<%= turbo_frame_tag dom_id(@tweet) do %>
+  <div class="card m-4 bg-secondary">
+    <div class="card card-content">
+      <%= render 'form', tweet: @tweet %> 
+      <%= button_to 'Cancel', @tweet, :class => "btn btn-danger btn-sm m-1" %>
+    </div>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @tweet %> |
 <%= link_to 'Back', tweets_path %>
